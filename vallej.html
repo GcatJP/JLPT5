@@ -811,6 +811,12 @@
         }
         return arr;
       }
+      function speakWord(text, lang) {
+        window.speechSynthesis.cancel(); // stop any word still being read
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = lang;
+        window.speechSynthesis.speak(utterance);
+      }
       function buildQuestionBank() {
         const nouns = shuffle(NOUN_BANK)
           .slice(0, 100)
@@ -846,6 +852,7 @@
         progressEl.textContent =
           "Question " + (currentIndex + 1) + " / " + QUESTIONS_PER_GAME;
         questionJpEl.textContent = q.en;
+        speakWord(q.en, "en-GB");
 
         const distractorPool = QUESTIONS_BANK.filter(
           (v) => v.en !== q.en && v.type === q.type,
