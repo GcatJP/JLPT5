@@ -391,6 +391,9 @@
         <button class="btn" data-count="20">20</button>
         <button class="btn" data-count="40">40</button>
         <button class="btn" data-count="all">All</button>
+        <button class="btn" id="resetProgressBtn" style="margin-top: 12px">
+          Reset Progress
+        </button>
       </div>
     </div>
 
@@ -604,7 +607,14 @@
           }
         }, 900);
       }
-
+      document
+        .getElementById("resetProgressBtn")
+        .addEventListener("click", () => {
+          if (confirm("Clear all mastered words and start fresh?")) {
+            masteredWords.clear();
+            saveMastered(masteredWords);
+          }
+        });
       function showResults() {
         gameWrapper.style.display = "none";
         progressEl.style.display = "none";

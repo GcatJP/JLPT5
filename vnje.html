@@ -869,8 +869,38 @@
         utterance.lang = lang;
         window.speechSynthesis.speak(utterance);
       }
+      // --- mastered-word tracking (add near the top, after ADJ_BANK / QUESTIONS_PER_GAME) ---
+      const MASTERED_KEY = "adjQuiz_masteredWords";
+
+      function loadMastered() {
+        try {
+          return new Set(JSON.parse(localStorage.getItem(MASTERED_KEY)) || []);
+        } catch {
+          return new Set();
+        }
+      }
+
+      function saveMastered(set) {
+        localStorage.setItem(MASTERED_KEY, JSON.stringify([...set]));
+      }
+
+      let masteredWords = loadMastered();
+
+      // --- update startGame() to filter the pool ---
       function startGame() {
-        questions = shuffle(VERB_BANK).slice(0, QUESTIONS_PER_GAME);
+        const availableWords = ADJ_BANK.filter((v) => !masteredWords.has(v.en));
+
+        if (availableWords.length === 0) {
+          alert(
+            "You've mastered every word! Resetting progress so you can practice again.",
+          );
+          masteredWords.clear();
+          saveMastered(masteredWords);
+          availableWords.push(...ADJ_BANK);
+        }
+
+        const count = Math.min(QUESTIONS_PER_GAME, availableWords.length);
+        questions = shuffle(availableWords).slice(0, count);
         currentIndex = 0;
         score = 0;
         wrongAnswers = [];
@@ -881,26 +911,7 @@
         renderQuestion();
       }
 
-      function renderQuestion() {
-        const q = questions[currentIndex];
-        progressEl.textContent =
-          "Question " + (currentIndex + 1) + " / " + QUESTIONS_PER_GAME;
-        questionJpEl.textContent = q.jp; // changed from q.jp
-        speakWord(q.jp, "ja-JP");
-        const distractorPool = VERB_BANK.filter((v) => v.en !== q.en);
-        const distractors = shuffle(distractorPool).slice(0, 2);
-        const options = shuffle([q, ...distractors]);
-
-        answersEl.innerHTML = "";
-        options.forEach((opt) => {
-          const btn = document.createElement("button");
-          btn.className = "btn";
-          btn.textContent = opt.en; // changed from opt.en
-          btn.addEventListener("click", () => handleAnswer(opt, q, btn));
-          answersEl.appendChild(btn);
-        });
-      }
-
+      // --- update handleAnswer() to record mastery on correct answers ---
       function handleAnswer(selected, correctQ, clickedBtn) {
         const allBtns = answersEl.querySelectorAll(".btn");
         allBtns.forEach((b) => (b.disabled = true));
@@ -908,7 +919,7 @@
         const isCorrect = selected.en === correctQ.en;
 
         allBtns.forEach((b) => {
-          if (b.textContent === correctQ.en) {
+          if (b.textContent === correctQ.jp) {
             b.classList.add("correct");
           } else if (b === clickedBtn) {
             b.classList.add("wrong");
@@ -919,6 +930,8 @@
 
         if (isCorrect) {
           score++;
+          masteredWords.add(correctQ.en);
+          saveMastered(masteredWords);
         } else {
           wrongAnswers.push({
             jp: correctQ.jp,
@@ -936,6 +949,7 @@
           }
         }, 900);
       }
+
       function showResults() {
         gameWrapper.style.display = "none";
         progressEl.style.display = "none";
