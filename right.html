@@ -455,394 +455,353 @@
       // ---- Grammar bank: sentence + isCorrect (based on A2 Grammar List) ----
       // 150 grammatically correct sentences + 150 grammatically incorrect sentences
       const GRAMMAR_BANK = [
-        // 1. Present simple
-        { text: "My father goes to work by train.", correct: true },
-        { text: "She practices the piano every day.", correct: true },
-        { text: "We have rice for breakfast.", correct: true },
-        { text: "He cleans his room on Sundays.", correct: true },
-        { text: "Birds fly south in winter.", correct: true },
-        { text: "My grandmother lives in Sapporo.", correct: true },
-        { text: "My father go to work by train.", correct: false },
-        { text: "She practice the piano every day.", correct: false },
-        { text: "We has rice for breakfast.", correct: false },
-        { text: "He clean his room on Sundays.", correct: false },
-        { text: "Birds flies south in winter.", correct: false },
-        { text: "My grandmother live in Sapporo.", correct: false },
+        // 1. ちゃいけない - must not do (spoken)
+        { text: "ここでは写真を撮っちゃいけない。", correct: true },
+        { text: "ここでは写真を撮るちゃいけない。", correct: false },
 
-        // 2. Present continuous
-        { text: "He is fixing his bike right now.", correct: true },
-        { text: "We are waiting for the bus at the moment.", correct: true },
-        { text: "She is learning a new song this week.", correct: true },
-        { text: "They are decorating the classroom together.", correct: true },
-        { text: "I am listening to my favorite podcast now.", correct: true },
-        { text: "The kids are swimming in the pool right now.", correct: true },
-        { text: "He is fix his bike right now.", correct: false },
-        { text: "We is waiting for the bus at the moment.", correct: false },
-        { text: "She are learning a new song this week.", correct: false },
-        { text: "They is decorating the classroom together.", correct: false },
-        { text: "I am listen to my favorite podcast now.", correct: false },
-        { text: "The kids swimming in the pool right now.", correct: false },
+        // 2. だ・です - to be
+        { text: "明日は休みです。", correct: true },
+        { text: "明日は休みだです。", correct: false },
 
-        // 3. Present perfect simple
-        { text: "I have cleaned my room already.", correct: true },
-        { text: "She has traveled to Okinawa twice.", correct: true },
-        { text: "We haven't finished our homework yet.", correct: true },
-        { text: "He has heard this song before.", correct: true },
-        { text: "They have already bought their tickets.", correct: true },
-        { text: "Have you ever eaten octopus?", correct: true },
-        { text: "I have clean my room already.", correct: false },
-        { text: "She has travel to Okinawa twice.", correct: false },
-        { text: "We haven't finish our homework yet.", correct: false },
-        { text: "He has hear this song before.", correct: false },
-        { text: "They have already buyed their tickets.", correct: false },
-        { text: "Have you ever eat octopus?", correct: false },
+        // 3. だけ - only
+        { text: "テストに一つだけ質問があります。", correct: true },
+        { text: "テストにだけ一つ質問があります。", correct: false },
 
-        // 4. Past simple
-        { text: "I played soccer with my friends yesterday.", correct: true },
-        { text: "She ate ramen for lunch last week.", correct: true },
-        { text: "We went to Kyoto during summer vacation.", correct: true },
-        { text: "He studied English for two hours last night.", correct: true },
-        { text: "They watched a funny show on TV.", correct: true },
-        { text: "I bought a present for my sister.", correct: true },
-        { text: "I play soccer with my friends yesterday.", correct: false },
-        { text: "She eated ramen for lunch last week.", correct: false },
-        { text: "We goed to Kyoto during summer vacation.", correct: false },
-        { text: "He study English for two hours last night.", correct: false },
-        { text: "They watch a funny show on TV.", correct: false },
-        { text: "I buyed a present for my sister.", correct: false },
+        // 4. だろう - probably (plain)
+        { text: "彼はもう寝ているだろう。", correct: true },
+        { text: "彼はもう寝ていますだろう。", correct: false },
 
-        // 5. Past continuous
-        { text: "I was reading a comic when you texted me.", correct: true },
-        { text: "We were standing in line for a long time.", correct: true },
-        { text: "She was washing the dishes at seven.", correct: true },
-        { text: "They were chatting online all evening.", correct: true },
-        { text: "He was napping when the doorbell rang.", correct: true },
-        { text: "It was snowing when we got home.", correct: true },
-        { text: "I was read a comic when you texted me.", correct: false },
-        { text: "We was standing in line for a long time.", correct: false },
-        { text: "She were washing the dishes at seven.", correct: false },
-        { text: "They was chatting online all evening.", correct: false },
-        { text: "He were napping when the doorbell rang.", correct: false },
-        { text: "It was snow when we got home.", correct: false },
+        // 5. で - in/at/on/by/with/via
+        { text: "駅で友達に会いました。", correct: true },
+        { text: "駅を友達に会いました。", correct: false },
 
-        // 6. Future simple (will)
-        { text: "I will text you when I arrive.", correct: true },
-        { text: "They will not be at the meeting.", correct: true },
-        { text: "She will join the swimming club next term.", correct: true },
-        { text: "We will move to a new house next year.", correct: true },
-        { text: "It will probably be windy tomorrow.", correct: true },
-        { text: "He will not remember my name.", correct: true },
-        { text: "I will texting you when I arrive.", correct: false },
-        { text: "They will not is at the meeting.", correct: false },
-        { text: "She will joins the swimming club next term.", correct: false },
-        { text: "We will moving to a new house next year.", correct: false },
-        { text: "It will probably is windy tomorrow.", correct: false },
-        { text: "He will not remembers my name.", correct: false },
+        // 6. でも - but/however
+        { text: "疲れました。でも、頑張ります。", correct: true },
+        { text: "疲れました。でも頑張りますでした。", correct: false },
 
-        // 7. Going to
-        { text: "I'm going to visit my cousin next week.", correct: true },
-        { text: "They are going to go camping this summer.", correct: true },
-        { text: "She is going to enter a speech contest.", correct: true },
-        { text: "We are going to watch the parade tonight.", correct: true },
-        { text: "He is going to buy a new racket.", correct: true },
-        { text: "I am going to join the art club.", correct: true },
-        { text: "I'm going to visiting my cousin next week.", correct: false },
-        { text: "They is going to go camping this summer.", correct: false },
-        { text: "She are going to enter a speech contest.", correct: false },
-        { text: "We going to watch the parade tonight.", correct: false },
-        { text: "He is going to buys a new racket.", correct: false },
-        { text: "I am go to join the art club.", correct: false },
+        // 7. でしょう - probably (polite)
+        { text: "来週は忙しいでしょう。", correct: true },
+        { text: "来週は忙しいますでしょう。", correct: false },
 
-        // 8. There is/are
-        { text: "There is a cat sleeping on the roof.", correct: true },
-        { text: "There are four seasons in Japan.", correct: true },
-        { text: "There is a new café near the station.", correct: true },
-        { text: "There are many stars in the sky tonight.", correct: true },
-        { text: "There isn't any juice left in the bottle.", correct: true },
+        // 8. どんな - what kind of
+        { text: "どんなスポーツが好きですか。", correct: true },
+        { text: "どんなのスポーツが好きですか。", correct: false },
+
+        // 9. どうして - why
+        { text: "どうして日本語を勉強していますか。", correct: true },
+        { text: "どうしてを日本語を勉強していますか。", correct: false },
+
+        // 10. どうやって - how
+        { text: "どうやって漢字を覚えますか。", correct: true },
+        { text: "どうやってに漢字を覚えますか。", correct: false },
+
+        // 11. が - subject marker
+        { text: "だれが来ましたか。", correct: true },
+        { text: "だれを来ましたか。", correct: false },
+
+        // 12. があります - there is (things)
+        { text: "机の上に本があります。", correct: true },
+        { text: "机の上に本がいます。", correct: false },
+
+        // 13. がほしい - to want something
+        { text: "新しい靴がほしい。", correct: true },
+        { text: "新しい靴をほしい。", correct: false },
+
+        // 14. がいます - there is (living things)
+        { text: "公園に子供がいます。", correct: true },
+        { text: "公園に子供があります。", correct: false },
+
+        // 15. ほうがいい - had better
+        { text: "薬を飲んだほうがいいです。", correct: true },
+        { text: "薬を飲むほうがいいでした。", correct: false },
+
+        // 16. い-adjectives
+        { text: "「大きい」はい-adjectiveです。", correct: true },
+        { text: "「大きい」はな-adjectiveです。", correct: false },
+
+        // 17. 一番 - the most
+        { text: "クラスで彼女が一番頭がいいです。", correct: true },
+        { text: "クラスで彼女は一番の頭がいいです。", correct: false },
+
+        // 18. 一緒に - together
+        { text: "週末、家族と一緒に旅行します。", correct: true },
+        { text: "週末、家族と一緒旅行します。", correct: false },
+
+        // 19. いつも - always
+        { text: "父はいつも朝早く起きます。", correct: true },
+        { text: "父はいつもの朝早く起きます。", correct: false },
+
+        // 20. じゃない - to not be
+        { text: "これはペンじゃない。", correct: true },
+        { text: "これはペンじゃないだ。", correct: false },
+
+        // 21. か - question particle
+        { text: "明日は雨ですか。", correct: true },
+        { text: "明日は雨かです。", correct: false },
+
+        // 22. か～か - or
+        { text: "電車かバスか、どちらで行きますか。", correct: true },
+        { text: "電車やバスか、どちらで行きますか。", correct: false },
+
+        // 23. から - because/since/from
+        { text: "眠いから、早く寝ます。", correct: true },
+        { text: "眠いのでから、早く寝ます。", correct: false },
+
+        // 24. 方 - way of doing
+        { text: "この漢字の読み方が分かりません。", correct: true },
+        { text: "この漢字の読むほうが分かりません。", correct: false },
+
+        // 25. けど - but (casual)
+        { text: "食べたいけど、お金がありません。", correct: true },
+        { text: "食べたいだけど、お金がありません。", correct: false },
+
+        // 26. けれども - but (formal)
+        { text: "この部屋は狭いけれども、静かです。", correct: true },
+        { text: "この部屋は狭いだけれども、静かです。", correct: false },
+
+        // 27. まだ - still/not yet
+        { text: "宿題はまだ終わっていません。", correct: true },
+        { text: "宿題はまだ終わっていましたません。", correct: false },
+
+        // 28. まだ～ていません - have not yet
+        { text: "彼女はまだ手紙を書いていません。", correct: true },
+        { text: "彼女はまだ手紙を書いませんでいません。", correct: false },
+
+        // 29. まで - until/as far as
+        { text: "図書館は九時まで開いています。", correct: true },
+        { text: "図書館は九時のまで開いています。", correct: false },
+
+        // 30. 前に - before
+        { text: "寝る前に、歯を磨きます。", correct: true },
+        { text: "寝る前で、歯を磨きます。", correct: false },
+
+        // 31. ませんか - would you / shall we
+        { text: "一緒に映画を見ませんか。", correct: true },
+        { text: "一緒に映画を見ましたませんか。", correct: false },
+
+        // 32. ましょう - let's
+        { text: "もう遅いので、帰りましょう。", correct: true },
+        { text: "もう遅いので、帰るましょう。", correct: false },
+
+        // 33. ましょうか - shall I
+        { text: "荷物を持ちましょうか。", correct: true },
+        { text: "荷物を持つましょうか。", correct: false },
+
+        // 34. も - too/also
+        { text: "私はコーヒーが好きです。紅茶も好きです。", correct: true },
+        { text: "私はコーヒーが好きです。紅茶はも好きです。", correct: false },
+
+        // 35. もう - already
+        { text: "宿題はもう終わりました。", correct: true },
+        { text: "宿題はもう終わりますでした。", correct: false },
+
+        // 36. な-adjectives
+        { text: "「静か」はな-adjectiveです。", correct: true },
+        { text: "「静か」はい-adjectiveです。", correct: false },
+
+        // 37. なあ - confirmation/admiration
+        { text: "きれいな景色だなあ。", correct: true },
+        { text: "きれいな景色ですなあ。", correct: false },
+
+        // 38. ないで - without doing
+        { text: "傘を持たないで出かけました。", correct: true },
+        { text: "傘を持ちないで出かけました。", correct: false },
+
+        // 39. ないでください - please don't do
+        { text: "ここに車を止めないでください。", correct: true },
+        { text: "ここに車を止まないでください。", correct: false },
+
+        // 40. ないといけない - must do
+        { text: "薬を飲まないといけない。", correct: true },
+        { text: "薬を飲まといけない。", correct: false },
+
+        // 41. なくてもいい - don't have to
+        { text: "今日は仕事をしなくてもいいです。", correct: true },
+        { text: "今日は仕事をしないもいいです。", correct: false },
+
+        // 42. なくちゃ - gotta do (casual)
+        { text: "もう帰らなくちゃ。", correct: true },
+        { text: "もう帰るなくちゃ。", correct: false },
+
+        // 43. なくてはいけない - must do
+        { text: "レポートを書かなくてはいけない。", correct: true },
+        { text: "レポートを書くなくてはいけない。", correct: false },
+
+        // 44. なくてはならない - must do
+        { text: "規則を守らなくてはならない。", correct: true },
+        { text: "規則を守るなくてはならない。", correct: false },
+
+        // 45. なる - to become
+        { text: "寒くなってきました。", correct: true },
+        { text: "寒いなってきました。", correct: false },
+
+        // 46. んです - to explain/emphasize
+        { text: "どうして遅れたんですか。", correct: true },
+        { text: "どうして遅れたのんですか。", correct: false },
+
+        // 47. ね - isn't it? right?
+        { text: "今日はいい天気ですね。", correct: true },
+        { text: "今日はいい天気ですねか。", correct: false },
+
+        // 48. に - destination/time particle
+        { text: "明日、東京に行きます。", correct: true },
+        { text: "明日、東京へを行きます。", correct: false },
+
+        // 49. にいく - go to do
+        { text: "映画を見にいく。", correct: true },
+        { text: "映画を見るにいく。", correct: false },
+
+        // 50. にする - to decide on
+        { text: "飲み物は紅茶にする。", correct: true },
+        { text: "飲み物は紅茶がする。", correct: false },
+
+        // 51. に/へ - to (direction)
+        { text: "北海道へ旅行します。", correct: true },
+        { text: "北海道と旅行します。", correct: false },
+
+        // 52. の - possessive particle
+        { text: "これは私の本です。", correct: true },
+        { text: "これは私が本です。", correct: false },
+
+        // 53. のです - to explain/emphasize
+        { text: "電車が遅れたのです。", correct: true },
+        { text: "電車が遅れただのです。", correct: false },
+
+        // 54. のが下手 - to be bad at
+        { text: "私は歌うのが下手です。", correct: true },
+        { text: "私は歌のが下手です。", correct: false },
+
+        // 55. のが上手 - to be good at
+        { text: "彼はテニスをするのが上手です。", correct: true },
+        { text: "彼はテニスをしますのが上手です。", correct: false },
+
+        // 56. のが好き - to like doing something
+        { text: "私は本を読むのが好きです。", correct: true },
+        { text: "私は本を読みますのが好きです。", correct: false },
+
+        // 57. の中で[A]が一番 - out of this group, A is best
+        { text: "スポーツの中でサッカーが一番好きです。", correct: true },
+        { text: "スポーツが中でサッカーが一番好きです。", correct: false },
+
+        // 58. ので - because of/since
+        { text: "疲れたので、早く寝ます。", correct: true },
+        { text: "疲れなので、早く寝ます。", correct: false },
+
+        // 59. お / ご - polite/honorific prefix
+        { text: "お名前を教えてください。", correct: true },
+        { text: "ご名前を教えてください。", correct: false },
+
+        // 60. を - object marker
+        { text: "パンを食べます。", correct: true },
+        { text: "パンが食べます。", correct: false },
+
+        // 61. をください - please give me
+        { text: "水をください。", correct: true },
+        { text: "水にください。", correct: false },
+
+        // 62. しかし - but/however
+        { text: "頑張りました。しかし、負けました。", correct: true },
+        { text: "頑張りました。しかしので、負けました。", correct: false },
+
+        // 63. それから - and then/after that
+        { text: "宿題をしました。それから、テレビを見ました。", correct: true },
         {
-          text: "There aren't many people at the shrine today.",
+          text: "宿題をしました。それからに、テレビを見ました。",
+          correct: false,
+        },
+
+        // 64. そして - and then/thus
+        {
+          text: "朝ご飯を食べました。そして、学校へ行きました。",
           correct: true,
         },
-        { text: "There are a cat sleeping on the roof.", correct: false },
-        { text: "There is four seasons in Japan.", correct: false },
-        { text: "There is many stars in the sky tonight.", correct: false },
-        { text: "There are a new café near the station.", correct: false },
-        { text: "There isn't any juices left in the bottle.", correct: false },
         {
-          text: "There aren't much people at the shrine today.",
+          text: "朝ご飯を食べました。そしてが、学校へ行きました。",
           correct: false,
         },
 
-        // 9. Subject-verb agreement
-        {
-          text: "The boy does his homework carefully every day.",
-          correct: true,
-        },
-        { text: "The twins are waiting outside the gym.", correct: true },
-        { text: "My parents live near the elementary school.", correct: true },
-        { text: "The class takes a trip every October.", correct: true },
-        { text: "Each member has a job in the club.", correct: true },
-        { text: "The bell rings loudly at noon.", correct: true },
-        {
-          text: "The boy do his homework carefully every day.",
-          correct: false,
-        },
-        { text: "The twins is waiting outside the gym.", correct: false },
-        {
-          text: "My parents lives near the elementary school.",
-          correct: false,
-        },
-        { text: "The class take a trip every October.", correct: false },
-        { text: "Each member have a job in the club.", correct: false },
-        { text: "The bell ring loudly at noon.", correct: false },
+        // 65. すぎる - too much
+        { text: "このケーキは甘すぎる。", correct: true },
+        { text: "このケーキは甘いすぎる。", correct: false },
 
-        // 10. Imperatives
-        { text: "Put on your seatbelt before we go.", correct: true },
-        { text: "Don't forget your homework at school.", correct: true },
-        { text: "Close the window, it's cold.", correct: true },
-        { text: "Please take off your shoes at the door.", correct: true },
-        { text: "Be careful with that knife.", correct: true },
-        { text: "Don't talk during the ceremony.", correct: true },
-        { text: "Puts on your seatbelt before we go.", correct: false },
-        { text: "Don't forgets your homework at school.", correct: false },
-        { text: "Closes the window, it's cold.", correct: false },
-        { text: "Please takes off your shoes at the door.", correct: false },
-        { text: "Are careful with that knife.", correct: false },
-        { text: "Don't talks during the ceremony.", correct: false },
+        // 66. たことがある - to have done something before
+        { text: "京都へ行ったことがある。", correct: true },
+        { text: "京都へ行っただことがある。", correct: false },
 
-        // 11. Modals: ability / possibility
-        { text: "She can play the guitar really well.", correct: true },
-        { text: "He can't explain the answer right now.", correct: true },
-        { text: "I can swim across the river.", correct: true },
-        { text: "Could you lend me your dictionary?", correct: true },
-        { text: "He may not be able to come tomorrow.", correct: true },
-        { text: "We could play badminton after lunch.", correct: true },
-        { text: "She can plays the guitar really well.", correct: false },
-        { text: "He can't explains the answer right now.", correct: false },
-        { text: "I can to swim across the river.", correct: false },
-        { text: "Could you lending me your dictionary?", correct: false },
-        { text: "He may not be able to comes tomorrow.", correct: false },
-        { text: "We could to play badminton after lunch.", correct: false },
+        // 67. たい - want to do
+        { text: "水が飲みたい。", correct: true },
+        { text: "水を飲むたい。", correct: false },
 
-        // 12. Modals: necessity / obligation
-        { text: "You must carry your ID card with you.", correct: true },
-        { text: "We have to wear indoor shoes at school.", correct: true },
-        { text: "You don't have to read this chapter today.", correct: true },
+        // 68. たり～たり - do such things as A and B
+        { text: "週末は掃除をしたり、買い物をしたりします。", correct: true },
         {
-          text: "Members must sign in before the meeting starts.",
-          correct: true,
-        },
-        {
-          text: "She has to watch her little brother after school.",
-          correct: true,
-        },
-        { text: "You mustn't eat food in the library.", correct: true },
-        { text: "You must to carry your ID card with you.", correct: false },
-        { text: "We have wear indoor shoes at school.", correct: false },
-        { text: "You don't has to read this chapter today.", correct: false },
-        {
-          text: "Members must signs in before the meeting starts.",
-          correct: false,
-        },
-        {
-          text: "She have to watch her little brother after school.",
-          correct: false,
-        },
-        { text: "You mustn't eats food in the library.", correct: false },
-
-        // 13. Plural nouns
-        { text: "Horses are very friendly animals.", correct: true },
-        { text: "There are two taxis waiting outside.", correct: true },
-        { text: "I have three pens in my pencil case.", correct: true },
-        { text: "The men are running in the schoolyard.", correct: true },
-        { text: "Many members enjoy this club activity.", correct: true },
-        { text: "The teachers are chatting by the lockers.", correct: true },
-        { text: "Horses is very friendly animals.", correct: false },
-        { text: "There are two taxies waiting outside.", correct: false },
-        { text: "I have three pen in my pencil case.", correct: false },
-        { text: "The mans are running in the schoolyard.", correct: false },
-        { text: "Many member enjoy this club activity.", correct: false },
-        { text: "The teacheres are chatting by the lockers.", correct: false },
-
-        // 14. Personal pronouns
-        { text: "She is my homeroom teacher.", correct: true },
-        { text: "They are my teammates.", correct: true },
-        { text: "He handed the note to me.", correct: true },
-        { text: "We met them at the station.", correct: true },
-        { text: "I showed her my new phone.", correct: true },
-        { text: "This present is for us.", correct: true },
-        { text: "Her is my homeroom teacher.", correct: false },
-        { text: "Them are my teammates.", correct: false },
-        { text: "He handed the note to I.", correct: false },
-        { text: "We met they at the station.", correct: false },
-        { text: "Me showed her my new phone.", correct: false },
-        { text: "This present is for we.", correct: false },
-
-        // 15. Countable / uncountable nouns
-        { text: "I bought four oranges at the shop.", correct: true },
-        { text: "There are two benches near the entrance.", correct: true },
-        { text: "I need some flour for the recipe.", correct: true },
-        { text: "Do you have any luggage for the trip?", correct: true },
-        { text: "She doesn't drink much coffee.", correct: true },
-        {
-          text: "There isn't much information about the schedule.",
-          correct: true,
-        },
-        { text: "I bought four orange at the shop.", correct: false },
-        { text: "There are two bench near the entrance.", correct: false },
-        { text: "I need some flours for the recipe.", correct: false },
-        { text: "Do you have any luggages for the trip?", correct: false },
-        { text: "She doesn't drink much coffees.", correct: false },
-        {
-          text: "There isn't much informations about the schedule.",
+          text: "週末は掃除をしってたり、買い物をしたりします。",
           correct: false,
         },
 
-        // 16. Demonstrative pronouns
-        { text: "This is my new backpack.", correct: true },
-        { text: "Those are your gloves.", correct: true },
-        { text: "That is a wonderful painting.", correct: true },
-        { text: "These are my classmates' drawings.", correct: true },
-        { text: "This map is clearer than that one.", correct: true },
-        { text: "Is this your notebook on the desk?", correct: true },
-        { text: "This are my new backpack.", correct: false },
-        { text: "Those is your gloves.", correct: false },
-        { text: "That are a wonderful painting.", correct: false },
-        { text: "These is my classmates' drawings.", correct: false },
-        { text: "This map is clearer than those one.", correct: false },
-        { text: "Is these your notebook on the desk?", correct: false },
+        // 69. てある - is/has been done (resulting state)
+        { text: "壁に絵が掛けてある。", correct: true },
+        { text: "壁に絵を掛けてある。", correct: false },
 
-        // 17. Possessives
-        { text: "That is Kenji's bag.", correct: true },
-        { text: "The cat's fur is very soft.", correct: true },
-        { text: "This is my umbrella.", correct: true },
-        { text: "Is this pencil case yours?", correct: true },
-        { text: "That racket is his, not hers.", correct: true },
-        { text: "Our teacher's office is on the second floor.", correct: true },
-        { text: "That is Kenji bag.", correct: false },
-        { text: "The cat fur is very soft.", correct: false },
-        { text: "This is mine umbrella.", correct: false },
-        { text: "Is this pencil case your's?", correct: false },
-        { text: "That racket is he, not her.", correct: false },
-        { text: "Our teacher office is on the second floor.", correct: false },
+        // 70. ている - ongoing action/current state
+        { text: "今、雨が降っている。", correct: true },
+        { text: "今、雨が降るている。", correct: false },
 
-        // 18. Articles
-        { text: "The notebook on the desk is mine.", correct: true },
-        { text: "The printer in the office is broken.", correct: true },
-        { text: "A bird flew into the classroom.", correct: true },
-        { text: "An orange fell from the basket.", correct: true },
-        { text: "My aunt is a nurse.", correct: true },
-        { text: "He wants to become an astronaut.", correct: true },
-        { text: "Notebook on the desk is mine.", correct: false },
-        { text: "Printer in the office is broken.", correct: false },
-        { text: "An bird flew into the classroom.", correct: false },
-        { text: "A orange fell from the basket.", correct: false },
-        { text: "My aunt is nurse.", correct: false },
-        { text: "He wants to become a astronaut.", correct: false },
+        // 71. てから - after doing
+        { text: "手を洗ってから、食べます。", correct: true },
+        { text: "手を洗ってがから、食べます。", correct: false },
 
-        // 19. Comparatives and superlatives
-        { text: "This bag is heavier than that one.", correct: true },
-        { text: "This is the highest mountain in Japan.", correct: true },
-        {
-          text: "This test was more difficult than last week's.",
-          correct: true,
-        },
-        { text: "It's the most exciting movie of the year.", correct: true },
-        { text: "My sister is shorter than me.", correct: true },
-        { text: "Today is hotter than yesterday.", correct: true },
-        { text: "This bag is more heavy than that one.", correct: false },
-        { text: "This is the high mountain in Japan.", correct: false },
-        { text: "This test was difficult than last week's.", correct: false },
-        { text: "It's the exciting movie of the year.", correct: false },
-        { text: "My sister is more short than me.", correct: false },
-        { text: "Today is more hot than yesterday.", correct: false },
+        // 72. てください - please do
+        { text: "ここに名前を書いてください。", correct: true },
+        { text: "ここに名前を書くください。", correct: false },
 
-        // 20. Adverbs
-        { text: "He answered the question confidently.", correct: true },
-        { text: "She closed the door quietly.", correct: true },
-        { text: "The homework was very difficult.", correct: true },
-        { text: "I really enjoyed the school festival.", correct: true },
-        { text: "I always check my bag before school.", correct: true },
-        { text: "He sometimes forgets his homework.", correct: true },
-        { text: "He answered the question confident.", correct: false },
-        { text: "She closed the door quiet.", correct: false },
-        { text: "The homework was very difficultly.", correct: false },
-        { text: "I real enjoyed the school festival.", correct: false },
-        { text: "I check always my bag before school.", correct: false },
-        { text: "He forgets sometimes his homework.", correct: false },
+        // 73. てはいけない - must not
+        { text: "ここで走ってはいけない。", correct: true },
+        { text: "ここで走るはいけない。", correct: false },
 
-        // 21. Conjunctions
-        { text: "I like curry and my brother likes ramen.", correct: true },
-        { text: "The gym is big but the pool is small.", correct: true },
-        { text: "You can choose tea or juice.", correct: true },
-        { text: "I got a good grade because I studied hard.", correct: true },
-        { text: "It was raining, so we stayed inside.", correct: true },
-        { text: "I wanted to run outside, but it got dark.", correct: true },
-        { text: "I like curry and my brother like ramen.", correct: false },
-        { text: "The gym is big but the pool are small.", correct: false },
-        { text: "You can chooses tea or juice.", correct: false },
-        { text: "I got a good grade because I studies hard.", correct: false },
-        { text: "It were raining, so we stayed inside.", correct: false },
-        {
-          text: "I wanted to run outside, but it got darker dark.",
-          correct: false,
-        },
+        // 74. てもいいです - is OK to
+        { text: "写真を撮ってもいいですか。", correct: true },
+        { text: "写真を撮るもいいですか。", correct: false },
 
-        // 22. Prepositions of place
-        { text: "The eraser is in the pencil case.", correct: true },
-        { text: "The ball rolled under the desk.", correct: true },
-        { text: "My house is near the convenience store.", correct: true },
-        { text: "The gym is between the pool and the field.", correct: true },
-        { text: "She stood next to the door.", correct: true },
-        { text: "There is a vending machine on the right.", correct: true },
-        { text: "The eraser is on pencil case.", correct: false },
-        { text: "The ball rolled under desk.", correct: false },
-        { text: "My house is near to the convenience store.", correct: false },
-        { text: "The gym is between the pool the field.", correct: false },
-        { text: "She stood next the door.", correct: false },
-        { text: "There is a vending machine in the right.", correct: false },
+        // 75. と - and/with/as
+        { text: "友達と映画を見ます。", correct: true },
+        { text: "友達に映画を見ます。", correct: false },
 
-        // 23. Prepositions of time
-        { text: "The bus leaves at seven thirty.", correct: true },
-        { text: "We have club activities on Wednesday.", correct: true },
-        { text: "It's usually cool in October.", correct: true },
-        { text: "I do my homework in the afternoon.", correct: true },
-        { text: "The sports day is in September.", correct: true },
-        { text: "The store opens at ten a.m.", correct: true },
-        { text: "The bus leaves in seven thirty.", correct: false },
-        { text: "We have club activities in Wednesday.", correct: false },
-        { text: "It's usually cool on October.", correct: false },
-        { text: "I do my homework on the afternoon.", correct: false },
-        { text: "The sports day is on September.", correct: false },
-        { text: "The store opens on ten a.m.", correct: false },
+        // 76. とき - when
+        { text: "日本へ行くとき、パスポートが必要です。", correct: true },
+        { text: "日本へ行きとき、パスポートが必要です。", correct: false },
 
-        // 24. Adjective + preposition
-        { text: "He's really good at drawing.", correct: true },
-        { text: "I'm worried about the exam.", correct: true },
-        { text: "She's interested in space and stars.", correct: true },
-        { text: "Sleep is good for your health.", correct: true },
-        { text: "This gift is similar to mine.", correct: true },
-        { text: "He's proud of his little sister.", correct: true },
-        { text: "He's really good in drawing.", correct: false },
-        { text: "I'm worried for the exam.", correct: false },
-        { text: "She's interested at space and stars.", correct: false },
-        { text: "Sleep is good of your health.", correct: false },
-        { text: "This gift is similar with mine.", correct: false },
-        { text: "He's proud for his little sister.", correct: false },
+        // 77. とても - very
+        { text: "この本はとても面白いです。", correct: true },
+        { text: "この本はとてもの面白いです。", correct: false },
 
-        // 25. Negation
-        { text: "I don't like natto.", correct: true },
-        { text: "He isn't at club today.", correct: true },
-        { text: "They don't have a smartphone yet.", correct: true },
-        { text: "She doesn't play badminton.", correct: true },
-        { text: "We aren't finished packing yet.", correct: true },
-        { text: "I haven't done my chores yet.", correct: true },
-        { text: "I no like natto.", correct: false },
-        { text: "He not is at club today.", correct: false },
-        { text: "They doesn't have a smartphone yet.", correct: false },
-        { text: "She don't play badminton.", correct: false },
-        { text: "We not are finished packing yet.", correct: false },
-        { text: "I haven't do my chores yet.", correct: false },
+        // 78. つもり - plan to/intend to
+        { text: "来年、留学するつもりです。", correct: true },
+        { text: "来年、留学しますつもりです。", correct: false },
+
+        // 79. は - topic marker
+        { text: "私は学生です。", correct: true },
+        { text: "私を学生です。", correct: false },
+
+        // 80. は〜より・・・です - A is more ~ than B
+        { text: "象はねずみより大きいです。", correct: true },
+        { text: "象はねずみのより大きいです。", correct: false },
+
+        // 81. はどうですか - how about
+        { text: "コーヒーはどうですか。", correct: true },
+        { text: "コーヒーがどうですか。", correct: false },
+
+        // 82. や - and/or (partial listing)
+        { text: "机の上に本やペンがあります。", correct: true },
+        { text: "机の上に本にペンがあります。", correct: false },
+
+        // 83. よ - emphasis (ending particle)
+        { text: "もうすぐ電車が来ますよ。", correct: true },
+        { text: "もうすぐ電車が来ますよか。", correct: false },
+
+        // 84. より～ほうが - A is more than B
+        { text: "電車よりバスのほうが速いです。", correct: true },
+        { text: "電車よりバスがほうが速いです。", correct: false },
       ];
 
       let questions = [];

@@ -453,1304 +453,509 @@
     <script>
       // ---- Missing Word bank: 250 questions based on A2 Grammar List ----
       const MISSING_WORD_BANK = [
-        // 1. Present simple
+        // 1. ちゃいけない - must not do (spoken)
         {
-          text: "My father ___ to work by train.",
-          options: ["go", "goes", "going"],
-          answer: "goes",
+          text: "ここでは写真を撮っ___。(You must not take photos here.)",
+          options: ["ちゃいけない", "たい", "てください"],
+          answer: "ちゃいけない",
         },
+        // 2. だ・です - to be
         {
-          text: "She ___ the piano every day.",
-          options: ["practice", "practices", "practicing"],
-          answer: "practices",
+          text: "明日は休み___。(Tomorrow is a day off.)",
+          options: ["です", "が", "でも"],
+          answer: "です",
         },
+        // 3. だけ - only
         {
-          text: "We ___ rice for breakfast.",
-          options: ["have", "has", "had"],
-          answer: "have",
+          text: "テストに一つ___質問があります。(I have only one question about the test.)",
+          options: ["だけ", "でも", "まで"],
+          answer: "だけ",
         },
+        // 4. だろう - probably (plain)
         {
-          text: "He ___ his room on Sundays.",
-          options: ["clean", "cleans", "cleaning"],
-          answer: "cleans",
+          text: "彼はもう寝ている___。(He's probably already asleep.)",
+          options: ["だろう", "でしょう", "でした"],
+          answer: "だろう",
         },
+        // 5. で - in/at/on/by/with/via
         {
-          text: "Birds ___ south in winter.",
-          options: ["fly", "flies", "flew"],
-          answer: "fly",
+          text: "駅___友達に会いました。(I met my friend at the station.)",
+          options: ["で", "に", "を"],
+          answer: "で",
         },
+        // 6. でも - but/however
         {
-          text: "I usually ___ TV after dinner.",
-          options: ["watch", "watches", "watched"],
-          answer: "watch",
+          text: "疲れました。___、頑張ります。(I'm tired. But I'll do my best.)",
+          options: ["でも", "それから", "そして"],
+          answer: "でも",
         },
+        // 7. でしょう - probably (polite)
         {
-          text: "My grandmother ___ in Sapporo.",
-          options: ["live", "lives", "living"],
-          answer: "lives",
+          text: "来週は忙しい___。(Next week will probably be busy.)",
+          options: ["でしょう", "だろう", "ました"],
+          answer: "でしょう",
         },
+        // 8. どんな - what kind of
         {
-          text: "They ___ badminton twice a week.",
-          options: ["plays", "play", "played"],
-          answer: "play",
+          text: "___スポーツが好きですか。(What kind of sports do you like?)",
+          options: ["どんな", "どうして", "どうやって"],
+          answer: "どんな",
         },
+        // 9. どうして - why
         {
-          text: "The library ___ at six o'clock.",
-          options: ["close", "closes", "closed"],
-          answer: "closes",
+          text: "___日本語を勉強していますか。(Why are you studying Japanese?)",
+          options: ["どうして", "どんな", "どうやって"],
+          answer: "どうして",
         },
+        // 10. どうやって - how
         {
-          text: "My brother ___ a lot of manga.",
-          options: ["read", "reads", "reading"],
-          answer: "reads",
+          text: "___漢字を覚えますか。(How do you memorize kanji?)",
+          options: ["どうやって", "どうして", "どんな"],
+          answer: "どうやって",
         },
-
-        // 2. Present continuous
+        // 11. が - subject marker
         {
-          text: "He ___ his bike right now.",
-          options: ["fix", "fixes", "is fixing"],
-          answer: "is fixing",
+          text: "だれ___来ましたか。(Who came?)",
+          options: ["が", "は", "を"],
+          answer: "が",
         },
+        // 12. があります - there is (things)
         {
-          text: "We ___ for the bus at the moment.",
-          options: ["wait", "waits", "are waiting"],
-          answer: "are waiting",
+          text: "机の上に本___。(There is a book on the desk.)",
+          options: ["があります", "がいます", "がほしい"],
+          answer: "があります",
         },
+        // 13. がほしい - to want something
         {
-          text: "She ___ a new song this week.",
-          options: ["learn", "learns", "is learning"],
-          answer: "is learning",
+          text: "新しい靴___。(I want new shoes.)",
+          options: ["がほしい", "があります", "がいます"],
+          answer: "がほしい",
         },
+        // 14. がいます - there is (living things)
         {
-          text: "They ___ the classroom together.",
-          options: ["decorate", "decorates", "are decorating"],
-          answer: "are decorating",
+          text: "公園に子供___。(There are children in the park.)",
+          options: ["がいます", "があります", "がほしい"],
+          answer: "がいます",
         },
+        // 15. ほうがいい - had better
         {
-          text: "I ___ to my favorite podcast now.",
-          options: ["listen", "am listening", "listens"],
-          answer: "am listening",
+          text: "薬を飲んだ___です。(You'd better take medicine.)",
+          options: ["ほうがいい", "たい", "つもり"],
+          answer: "ほうがいい",
         },
+        // 16. い-adjectives
         {
-          text: "The kids ___ in the pool right now.",
-          options: ["swim", "swims", "are swimming"],
-          answer: "are swimming",
+          text: "「大きい」はどんな形容詞ですか。(What kind of adjective is 大きい?)",
+          options: ["い-adjective", "な-adjective", "noun"],
+          answer: "い-adjective",
         },
+        // 17. 一番 - the most
         {
-          text: "My mom ___ a birthday cake today.",
-          options: ["bake", "bakes", "is baking"],
-          answer: "is baking",
+          text: "クラスで彼女が___頭がいいです。(She is the smartest in the class.)",
+          options: ["一番", "一緒に", "いつも"],
+          answer: "一番",
         },
+        // 18. 一緒に - together
         {
-          text: "Look! The dog ___ after its tail.",
-          options: ["run", "runs", "is running"],
-          answer: "is running",
+          text: "週末、家族と___旅行します。(I'll travel together with my family this weekend.)",
+          options: ["一緒に", "一番", "いつも"],
+          answer: "一緒に",
         },
+        // 19. いつも - always
         {
-          text: "We ___ our science project this week.",
-          options: ["do", "does", "are doing"],
-          answer: "are doing",
+          text: "父は___朝早く起きます。(My father always wakes up early in the morning.)",
+          options: ["いつも", "一番", "もう"],
+          answer: "いつも",
         },
+        // 20. じゃない - to not be
         {
-          text: "He ___ a text message to his friend.",
-          options: ["send", "sends", "is sending"],
-          answer: "is sending",
+          text: "これはペン___。(This is not a pen.)",
+          options: ["じゃない", "です", "が"],
+          answer: "じゃない",
         },
-
-        // 3. Present perfect simple
+        // 21. か - question particle
         {
-          text: "I ___ my room already.",
-          options: ["clean", "have cleaned", "cleaned"],
-          answer: "have cleaned",
+          text: "明日は雨です___。(Will it rain tomorrow?)",
+          options: ["か", "ね", "よ"],
+          answer: "か",
         },
+        // 22. か～か - or
         {
-          text: "She ___ to Okinawa twice.",
-          options: ["travel", "has traveled", "travels"],
-          answer: "has traveled",
+          text: "電車___バス___、どちらで行きますか。(Will you go by train or bus?)",
+          options: ["か～か", "と", "や"],
+          answer: "か～か",
         },
+        // 23. から - because/since/from
         {
-          text: "We ___ our homework yet.",
-          options: ["haven't finished", "didn't finish", "don't finish"],
-          answer: "haven't finished",
+          text: "眠い___、早く寝ます。(Because I'm sleepy, I'll sleep early.)",
+          options: ["から", "ので", "けど"],
+          answer: "から",
         },
+        // 24. 方 - way of doing
         {
-          text: "He ___ this song before.",
-          options: ["hear", "has heard", "heard"],
-          answer: "has heard",
+          text: "この漢字の読み___が分かりません。(I don't know how to read this kanji.)",
+          options: ["方", "から", "つもり"],
+          answer: "方",
         },
+        // 25. けど - but (casual)
         {
-          text: "They ___ their tickets already.",
-          options: ["buy", "have bought", "bought"],
-          answer: "have bought",
+          text: "食べたい___、お金がありません。(I want to eat, but I don't have money.)",
+          options: ["けど", "から", "ので"],
+          answer: "けど",
         },
+        // 26. けれども - but (formal)
         {
-          text: "___ you ever eaten octopus?",
-          options: ["Have", "Has", "Did"],
-          answer: "Have",
+          text: "この部屋は狭い___、静かです。(This room is small, but it's quiet.)",
+          options: ["けれども", "でも", "から"],
+          answer: "けれども",
         },
+        // 27. まだ - still/not yet
         {
-          text: "My father ___ that movie five times.",
-          options: ["watch", "has watched", "watches"],
-          answer: "has watched",
+          text: "宿題は___終わっていません。(I still haven't finished the homework.)",
+          options: ["まだ", "もう", "すぐ"],
+          answer: "まだ",
         },
+        // 28. まだ～ていません - have not yet
         {
-          text: "We ___ in this apartment for two years.",
-          options: ["live", "have lived", "lived"],
-          answer: "have lived",
+          text: "彼女はまだ手紙を書い___。(She still hasn't written the letter.)",
+          options: ["ていません", "ています", "でした"],
+          answer: "ていません",
         },
+        // 29. まで - until/as far as
         {
-          text: "She just ___ her test results.",
-          options: ["has checked", "checked", "checks"],
-          answer: "has checked",
+          text: "図書館は九時___開いています。(The library is open until 9 o'clock.)",
+          options: ["まで", "から", "だけ"],
+          answer: "まで",
         },
+        // 30. 前に - before
         {
-          text: "I ___ never seen snow before.",
-          options: ["have", "has", "am"],
-          answer: "have",
+          text: "寝る___、歯を磨きます。(Before sleeping, I brush my teeth.)",
+          options: ["前に", "から", "まで"],
+          answer: "前に",
         },
-
-        // 4. Past simple
+        // 31. ませんか - would you / shall we
         {
-          text: "I ___ soccer with my friends yesterday.",
-          options: ["play", "played", "plays"],
-          answer: "played",
+          text: "一緒に映画を見___。(Would you like to watch a movie together?)",
+          options: ["ませんか", "ましょう", "たいです"],
+          answer: "ませんか",
         },
+        // 32. ましょう - let's
         {
-          text: "She ___ ramen for lunch last week.",
-          options: ["eat", "ate", "eats"],
-          answer: "ate",
+          text: "もう遅いので、帰り___。(It's late, so let's go home.)",
+          options: ["ましょう", "ませんか", "ましょうか"],
+          answer: "ましょう",
         },
+        // 33. ましょうか - shall I
         {
-          text: "We ___ to Kyoto during summer vacation.",
-          options: ["go", "went", "goes"],
-          answer: "went",
+          text: "荷物を持ち___。(Shall I carry your luggage?)",
+          options: ["ましょうか", "ましょう", "ませんか"],
+          answer: "ましょうか",
         },
+        // 34. も - too/also
         {
-          text: "He ___ English for two hours last night.",
-          options: ["study", "studied", "studies"],
-          answer: "studied",
+          text: "私はコーヒーが好きです。紅茶___好きです。(I like coffee. I also like tea.)",
+          options: ["も", "は", "だけ"],
+          answer: "も",
         },
+        // 35. もう - already
         {
-          text: "They ___ a funny show on TV.",
-          options: ["watch", "watched", "watches"],
-          answer: "watched",
+          text: "宿題は___終わりました。(I already finished the homework.)",
+          options: ["もう", "まだ", "いつも"],
+          answer: "もう",
         },
+        // 36. な-adjectives
         {
-          text: "I ___ a present for my sister.",
-          options: ["buy", "bought", "buys"],
-          answer: "bought",
+          text: "「静か」はどんな形容詞ですか。(What kind of adjective is 静か?)",
+          options: ["な-adjective", "い-adjective", "noun"],
+          answer: "な-adjective",
         },
+        // 37. なあ - confirmation/admiration
         {
-          text: "She ___ her speech before the contest.",
-          options: ["practice", "practiced", "practices"],
-          answer: "practiced",
+          text: "きれいな景色だ___。(What a beautiful view!)",
+          options: ["なあ", "ね", "よ"],
+          answer: "なあ",
         },
+        // 38. ないで - without doing
         {
-          text: "We ___ so much fun at the school trip.",
-          options: ["have", "had", "has"],
-          answer: "had",
+          text: "傘を持た___出かけました。(I went out without bringing an umbrella.)",
+          options: ["ないで", "てから", "たり"],
+          answer: "ないで",
         },
+        // 39. ないでください - please don't do
         {
-          text: "He ___ to Nagoya last weekend.",
-          options: ["go", "went", "goes"],
-          answer: "went",
+          text: "ここに車を止め___。(Please don't park your car here.)",
+          options: ["ないでください", "てください", "たいです"],
+          answer: "ないでください",
         },
+        // 40. ないといけない - must do
         {
-          text: "I ___ up late this morning.",
-          options: ["wake", "woke", "wakes"],
-          answer: "woke",
+          text: "薬を飲ま___。(I have to take medicine.)",
+          options: ["ないといけない", "なくてもいい", "たことがある"],
+          answer: "ないといけない",
         },
-
-        // 5. Past continuous
+        // 41. なくてもいい - don't have to
         {
-          text: "I ___ reading a comic when you texted me.",
-          options: ["was", "were", "am"],
-          answer: "was",
+          text: "今日は仕事をし___。(You don't have to work today.)",
+          options: ["なくてもいい", "ないといけない", "なくちゃ"],
+          answer: "なくてもいい",
         },
+        // 42. なくちゃ - gotta do (casual)
         {
-          text: "We ___ standing in line for a long time.",
-          options: ["was", "were", "are"],
-          answer: "were",
+          text: "もう帰ら___。(I've gotta go home now.)",
+          options: ["なくちゃ", "なくてもいい", "たい"],
+          answer: "なくちゃ",
         },
+        // 43. なくてはいけない - must do
         {
-          text: "She ___ washing the dishes at seven.",
-          options: ["was", "were", "is"],
-          answer: "was",
+          text: "レポートを書か___。(I must write the report.)",
+          options: ["なくてはいけない", "なくてもいい", "たことがある"],
+          answer: "なくてはいけない",
         },
+        // 44. なくてはならない - must do
         {
-          text: "They ___ chatting online all evening.",
-          options: ["was", "were", "are"],
-          answer: "were",
+          text: "規則を守ら___。(One must follow the rules.)",
+          options: ["なくてはならない", "なくてもいい", "てもいいです"],
+          answer: "なくてはならない",
         },
+        // 45. なる - to become
         {
-          text: "He ___ napping when the doorbell rang.",
-          options: ["was", "were", "is"],
-          answer: "was",
+          text: "寒く___きました。(It has gotten cold.)",
+          options: ["なって", "して", "あって"],
+          answer: "なって",
         },
+        // 46. んです - to explain/emphasize
         {
-          text: "It ___ snowing when we got home.",
-          options: ["was", "were", "is"],
-          answer: "was",
+          text: "どうして遅れた___か。(explaining: Why were you late?)",
+          options: ["んです", "です", "ます"],
+          answer: "んです",
         },
+        // 47. ね - isn't it? right?
         {
-          text: "I ___ doing my homework when she called.",
-          options: ["was", "were", "am"],
-          answer: "was",
+          text: "今日はいい天気です___。(It's nice weather today, isn't it?)",
+          options: ["ね", "よ", "か"],
+          answer: "ね",
         },
+        // 48. に - destination/time particle
         {
-          text: "My classmates ___ laughing during the movie.",
-          options: ["was", "were", "are"],
-          answer: "were",
+          text: "明日、東京___行きます。(Tomorrow I will go to Tokyo.)",
+          options: ["に", "で", "を"],
+          answer: "に",
         },
+        // 49. にいく - go to do
         {
-          text: "What ___ you doing at ten last night?",
-          options: ["was", "were", "are"],
-          answer: "were",
+          text: "映画を見___。(I'm going to see a movie.)",
+          options: ["にいく", "にする", "がほしい"],
+          answer: "にいく",
         },
+        // 50. にする - to decide on
         {
-          text: "The players ___ warming up before the game.",
-          options: ["was", "were", "are"],
-          answer: "were",
+          text: "飲み物は紅茶___。(I'll decide on tea for the drink.)",
+          options: ["にする", "にいく", "ほうがいい"],
+          answer: "にする",
         },
-
-        // 6. Future simple (will)
+        // 51. に/へ - to (direction)
         {
-          text: "I ___ text you when I arrive.",
-          options: ["will", "am", "do"],
-          answer: "will",
+          text: "北海道___旅行します。(I will travel to Hokkaido.)",
+          options: ["へ", "で", "を"],
+          answer: "へ",
         },
+        // 52. の - possessive particle
         {
-          text: "They ___ not be at the meeting.",
-          options: ["will", "would", "are"],
-          answer: "will",
+          text: "これは私___本です。(This is my book.)",
+          options: ["の", "が", "を"],
+          answer: "の",
         },
+        // 53. のです - to explain/emphasize
         {
-          text: "She ___ join the swimming club next term.",
-          options: ["will", "is", "does"],
-          answer: "will",
+          text: "電車が遅れた___。(explaining: The train was delayed.)",
+          options: ["のです", "んです", "でしょう"],
+          answer: "のです",
         },
+        // 54. のが下手 - to be bad at
         {
-          text: "We ___ move to a new house next year.",
-          options: ["will", "are", "do"],
-          answer: "will",
+          text: "私は歌う___です。(I'm bad at singing.)",
+          options: ["のが下手", "のが上手", "のが好き"],
+          answer: "のが下手",
         },
+        // 55. のが上手 - to be good at
         {
-          text: "It ___ probably be windy tomorrow.",
-          options: ["will", "is", "does"],
-          answer: "will",
+          text: "彼はテニスをする___です。(He's good at playing tennis.)",
+          options: ["のが上手", "のが下手", "のが好き"],
+          answer: "のが上手",
         },
+        // 56. のが好き - to like doing something
         {
-          text: "He ___ not remember my name.",
-          options: ["will", "is", "does"],
-          answer: "will",
+          text: "私は本を読む___です。(I like reading books.)",
+          options: ["のが好き", "のが上手", "のが下手"],
+          answer: "のが好き",
         },
+        // 57. の中で[A]が一番 - out of this group, A is best
         {
-          text: "I think it ___ snow this weekend.",
-          options: ["will", "is", "does"],
-          answer: "will",
+          text: "スポーツの中でサッカー___好きです。(Among sports, I like soccer the best.)",
+          options: ["が一番", "だけ", "でも"],
+          answer: "が一番",
         },
+        // 58. ので - because of/since
         {
-          text: "___ you come to my house tomorrow?",
-          options: ["Will", "Do", "Are"],
-          answer: "Will",
+          text: "疲れた___、早く寝ます。(Because I'm tired, I'll sleep early.)",
+          options: ["ので", "だけ", "でも"],
+          answer: "ので",
         },
+        // 59. お / ご - polite/honorific prefix
         {
-          text: "We ___ not have practice on Friday.",
-          options: ["will", "are", "do"],
-          answer: "will",
+          text: "___名前を教えてください。(Please tell me your name.)",
+          options: ["お", "を", "が"],
+          answer: "お",
         },
+        // 60. を - object marker
         {
-          text: "My mother ___ pick me up after school.",
-          options: ["will", "is", "does"],
-          answer: "will",
+          text: "パン___食べます。(I eat bread.)",
+          options: ["を", "が", "に"],
+          answer: "を",
         },
-
-        // 7. Going to
+        // 61. をください - please give me
         {
-          text: "I'm going to ___ my cousin next week.",
-          options: ["visit", "visiting", "visits"],
-          answer: "visit",
+          text: "水___。(Please give me water.)",
+          options: ["をください", "がほしい", "でしょう"],
+          answer: "をください",
         },
+        // 62. しかし - but/however
         {
-          text: "They are going to ___ camping this summer.",
-          options: ["go", "going", "goes"],
-          answer: "go",
+          text: "頑張りました。___、負けました。(I tried hard. However, I lost.)",
+          options: ["しかし", "それから", "そして"],
+          answer: "しかし",
         },
+        // 63. それから - and then/after that
         {
-          text: "She is going to ___ a speech contest.",
-          options: ["enter", "entering", "enters"],
-          answer: "enter",
+          text: "宿題をしました。___、テレビを見ました。(I did homework. After that, I watched TV.)",
+          options: ["それから", "しかし", "でも"],
+          answer: "それから",
         },
+        // 64. そして - and then/thus
         {
-          text: "We are going to ___ the parade tonight.",
-          options: ["watch", "watching", "watches"],
-          answer: "watch",
+          text: "朝ご飯を食べました。___、学校へ行きました。(I ate breakfast. And then I went to school.)",
+          options: ["そして", "しかし", "でも"],
+          answer: "そして",
         },
+        // 65. すぎる - too much
         {
-          text: "He is going to ___ a new racket.",
-          options: ["buy", "buying", "buys"],
-          answer: "buy",
+          text: "このケーキは甘___。(This cake is too sweet.)",
+          options: ["すぎる", "だけ", "でも"],
+          answer: "すぎる",
         },
+        // 66. たことがある - to have done something before
         {
-          text: "I am going to ___ the art club.",
-          options: ["join", "joining", "joins"],
-          answer: "join",
+          text: "京都へ行っ___。(I have been to Kyoto before.)",
+          options: ["たことがある", "たほうがいい", "たいです"],
+          answer: "たことがある",
         },
+        // 67. たい - want to do
         {
-          text: "___ you going to help us today?",
-          options: ["Are", "Is", "Do"],
-          answer: "Are",
+          text: "水が飲み___。(I want to drink water.)",
+          options: ["たい", "たことがある", "たほうがいい"],
+          answer: "たい",
         },
+        // 68. たり～たり - do such things as A and B
         {
-          text: "My brother is going to ___ a costume for the festival.",
-          options: ["make", "making", "makes"],
-          answer: "make",
+          text: "週末は掃除をし___、買い物をしたりします。(On weekends, I do things like cleaning and shopping.)",
+          options: ["たり", "から", "ので"],
+          answer: "たり",
         },
+        // 69. てある - is/has been done (resulting state)
         {
-          text: "We are going to ___ a picnic on Sunday.",
-          options: ["have", "having", "has"],
-          answer: "have",
+          text: "壁に絵が掛け___。(A picture is hung on the wall.)",
+          options: ["てある", "ている", "てください"],
+          answer: "てある",
         },
+        // 70. ている - ongoing action/current state
         {
-          text: "She is going to ___ her project after school.",
-          options: ["finish", "finishing", "finishes"],
-          answer: "finish",
+          text: "今、雨が降っ___。(It is raining now.)",
+          options: ["ている", "てある", "てから"],
+          answer: "ている",
         },
-
-        // 8. There is/are
+        // 71. てから - after doing
         {
-          text: "There ___ a cat sleeping on the roof.",
-          options: ["is", "are", "be"],
-          answer: "is",
+          text: "手を洗っ___、食べます。(After washing my hands, I eat.)",
+          options: ["てから", "てある", "ている"],
+          answer: "てから",
         },
+        // 72. てください - please do
         {
-          text: "There ___ four seasons in Japan.",
-          options: ["is", "are", "be"],
-          answer: "are",
+          text: "ここに名前を書い___。(Please write your name here.)",
+          options: ["てください", "ないでください", "てもいいです"],
+          answer: "てください",
         },
+        // 73. てはいけない - must not
         {
-          text: "There ___ a new café near the station.",
-          options: ["is", "are", "be"],
-          answer: "is",
+          text: "ここで走っ___。(You must not run here.)",
+          options: ["てはいけない", "てもいいです", "てください"],
+          answer: "てはいけない",
         },
+        // 74. てもいいです - is OK to
         {
-          text: "There ___ many stars in the sky tonight.",
-          options: ["is", "are", "be"],
-          answer: "are",
+          text: "写真を撮っ___か。(Is it OK to take a photo?)",
+          options: ["てもいいです", "てはいけません", "ないでください"],
+          answer: "てもいいです",
         },
+        // 75. と - and/with/as
         {
-          text: "There ___ any juice left in the bottle.",
-          options: ["isn't", "aren't", "don't"],
-          answer: "isn't",
+          text: "友達___映画を見ます。(I watch a movie with my friend.)",
+          options: ["と", "や", "か"],
+          answer: "と",
         },
+        // 76. とき - when
         {
-          text: "There ___ many people at the shrine today.",
-          options: ["isn't", "aren't", "doesn't"],
-          answer: "aren't",
+          text: "日本へ行く___、パスポートが必要です。(When you go to Japan, you need a passport.)",
+          options: ["とき", "前に", "から"],
+          answer: "とき",
         },
+        // 77. とても - very
         {
-          text: "There ___ a festival in our town every August.",
-          options: ["is", "are", "be"],
-          answer: "is",
+          text: "この本は___面白いです。(This book is very interesting.)",
+          options: ["とても", "一番", "もう"],
+          answer: "とても",
         },
+        // 78. つもり - plan to/intend to
         {
-          text: "There ___ two vending machines near the gym.",
-          options: ["is", "are", "be"],
-          answer: "are",
+          text: "来年、留学する___です。(I plan to study abroad next year.)",
+          options: ["つもり", "ほうがいい", "たい"],
+          answer: "つもり",
         },
+        // 79. は - topic marker
         {
-          text: "___ there a post office around here?",
-          options: ["Is", "Are", "Does"],
-          answer: "Is",
+          text: "私___学生です。(I am a student.)",
+          options: ["は", "が", "を"],
+          answer: "は",
         },
+        // 80. は〜より・・・です - A is more ~ than B
         {
-          text: "There ___ some cookies in the jar.",
-          options: ["is", "are", "be"],
-          answer: "are",
+          text: "象はねずみ___大きいです。(An elephant is bigger than a mouse.)",
+          options: ["より", "から", "まで"],
+          answer: "より",
         },
-
-        // 9. Subject-verb agreement
+        // 81. はどうですか - how about
         {
-          text: "The boy ___ his homework carefully every day.",
-          options: ["do", "does", "did"],
-          answer: "does",
+          text: "コーヒーは___。(How about coffee?)",
+          options: ["はどうですか", "をください", "がほしい"],
+          answer: "はどうですか",
         },
+        // 82. や - and/or (partial listing)
         {
-          text: "The twins ___ waiting outside the gym.",
-          options: ["is", "are", "am"],
-          answer: "are",
+          text: "机の上に本___ペンがあります。(There are things like books and pens on the desk.)",
+          options: ["や", "と", "か"],
+          answer: "や",
         },
+        // 83. よ - emphasis (ending particle)
         {
-          text: "My parents ___ near the elementary school.",
-          options: ["live", "lives", "living"],
-          answer: "live",
+          text: "もうすぐ電車が来ます___。(The train is coming soon, you know!)",
+          options: ["よ", "ね", "か"],
+          answer: "よ",
         },
+        // 84. より～ほうが - A is more than B
         {
-          text: "The class ___ a trip every October.",
-          options: ["take", "takes", "taking"],
-          answer: "takes",
-        },
-        {
-          text: "Each member ___ a job in the club.",
-          options: ["have", "has", "having"],
-          answer: "has",
-        },
-        {
-          text: "The bell ___ loudly at noon.",
-          options: ["ring", "rings", "ringing"],
-          answer: "rings",
-        },
-        {
-          text: "My friends ___ tennis after class.",
-          options: ["play", "plays", "playing"],
-          answer: "play",
-        },
-        {
-          text: "Everyone ___ the new song.",
-          options: ["love", "loves", "loving"],
-          answer: "loves",
-        },
-        {
-          text: "The students ___ in the gym now.",
-          options: ["gather", "gathers", "gathering"],
-          answer: "gather",
-        },
-        {
-          text: "My aunt ___ a small bakery.",
-          options: ["run", "runs", "running"],
-          answer: "runs",
-        },
-
-        // 10. Imperatives
-        {
-          text: "___ your seatbelt before we go.",
-          options: ["Put on", "Puts on", "Putting on"],
-          answer: "Put on",
-        },
-        {
-          text: "Don't ___ your homework at school.",
-          options: ["forget", "forgets", "forgetting"],
-          answer: "forget",
-        },
-        {
-          text: "___ the window, it's cold.",
-          options: ["Close", "Closes", "Closing"],
-          answer: "Close",
-        },
-        {
-          text: "Please ___ your shoes at the door.",
-          options: ["take off", "takes off", "taking off"],
-          answer: "take off",
-        },
-        {
-          text: "___ careful with that knife.",
-          options: ["Be", "Are", "Is"],
-          answer: "Be",
-        },
-        {
-          text: "Don't ___ during the ceremony.",
-          options: ["talk", "talks", "talking"],
-          answer: "talk",
-        },
-        {
-          text: "___ your hand if you know the answer.",
-          options: ["Raise", "Raises", "Raising"],
-          answer: "Raise",
-        },
-        {
-          text: "___ quiet during the test, please.",
-          options: ["Be", "Are", "Is"],
-          answer: "Be",
-        },
-        {
-          text: "Please ___ the form by Friday.",
-          options: ["submit", "submits", "submitting"],
-          answer: "submit",
-        },
-        {
-          text: "Don't ___ your umbrella at school.",
-          options: ["leave", "leaves", "leaving"],
-          answer: "leave",
-        },
-
-        // 11. Modals: ability / possibility
-        {
-          text: "She can ___ the guitar really well.",
-          options: ["play", "plays", "playing"],
-          answer: "play",
-        },
-        {
-          text: "He can't ___ the answer right now.",
-          options: ["explain", "explains", "explaining"],
-          answer: "explain",
-        },
-        {
-          text: "I can ___ across the river.",
-          options: ["swim", "swims", "swimming"],
-          answer: "swim",
-        },
-        {
-          text: "___ you lend me your dictionary?",
-          options: ["Could", "Do", "Does"],
-          answer: "Could",
-        },
-        {
-          text: "He may not be able to ___ tomorrow.",
-          options: ["come", "comes", "coming"],
-          answer: "come",
-        },
-        {
-          text: "We could ___ badminton after lunch.",
-          options: ["play", "plays", "playing"],
-          answer: "play",
-        },
-        {
-          text: "She ___ solve that math problem easily.",
-          options: ["can", "cans", "canning"],
-          answer: "can",
-        },
-        {
-          text: "I can't ___ my locker number.",
-          options: ["remember", "remembers", "remembering"],
-          answer: "remember",
-        },
-        {
-          text: "My uncle can ___ a motorcycle.",
-          options: ["ride", "rides", "riding"],
-          answer: "ride",
-        },
-        {
-          text: "Can you ___ chopsticks well?",
-          options: ["use", "uses", "using"],
-          answer: "use",
-        },
-
-        // 12. Modals: necessity / obligation
-        {
-          text: "You must ___ your ID card with you.",
-          options: ["carry", "carries", "carrying"],
-          answer: "carry",
-        },
-        {
-          text: "We have to ___ indoor shoes at school.",
-          options: ["wear", "wears", "wearing"],
-          answer: "wear",
-        },
-        {
-          text: "You don't have to ___ this chapter today.",
-          options: ["read", "reads", "reading"],
-          answer: "read",
-        },
-        {
-          text: "Members must ___ before the meeting starts.",
-          options: ["sign in", "signs in", "signing in"],
-          answer: "sign in",
-        },
-        {
-          text: "She has to ___ her little brother after school.",
-          options: ["watch", "watches", "watching"],
-          answer: "watch",
-        },
-        {
-          text: "You mustn't ___ food in the library.",
-          options: ["eat", "eats", "eating"],
-          answer: "eat",
-        },
-        {
-          text: "We must ___ polite to our guests.",
-          options: ["be", "is", "are"],
-          answer: "be",
-        },
-        {
-          text: "He has to ___ his brother with math.",
-          options: ["help", "helps", "helping"],
-          answer: "help",
-        },
-        {
-          text: "You must ___ your homework before dinner.",
-          options: ["finish", "finishes", "finishing"],
-          answer: "finish",
-        },
-        {
-          text: "I have to ___ my dog every morning.",
-          options: ["walk", "walks", "walking"],
-          answer: "walk",
-        },
-
-        // 13. Plural nouns
-        {
-          text: "___ are very friendly animals.",
-          options: ["Horse", "Horses", "Horses's"],
-          answer: "Horses",
-        },
-        {
-          text: "There are two ___ waiting outside.",
-          options: ["taxi", "taxis", "taxies"],
-          answer: "taxis",
-        },
-        {
-          text: "I have three ___ in my pencil case.",
-          options: ["pen", "pens", "penes"],
-          answer: "pens",
-        },
-        {
-          text: "The ___ are running in the schoolyard.",
-          options: ["man", "men", "mans"],
-          answer: "men",
-        },
-        {
-          text: "Many ___ enjoy this club activity.",
-          options: ["member", "members", "memberes"],
-          answer: "members",
-        },
-        {
-          text: "The ___ are chatting by the lockers.",
-          options: ["teacher", "teachers", "teacheres"],
-          answer: "teachers",
-        },
-        {
-          text: "There are six ___ on the shelf.",
-          options: ["dish", "dishes", "dishs"],
-          answer: "dishes",
-        },
-        {
-          text: "I found five ___ near the pond.",
-          options: ["frog", "frogs", "frogies"],
-          answer: "frogs",
-        },
-        {
-          text: "Those ___ belong to the science club.",
-          options: ["shelf", "shelves", "shelfs"],
-          answer: "shelves",
-        },
-        {
-          text: "The ___ are jumping in the river.",
-          options: ["fish", "fishes", "fishs"],
-          answer: "fish",
-        },
-
-        // 14. Personal pronouns
-        {
-          text: "___ is my homeroom teacher.",
-          options: ["She", "Her", "Hers"],
-          answer: "She",
-        },
-        {
-          text: "___ are my teammates.",
-          options: ["They", "Them", "Their"],
-          answer: "They",
-        },
-        {
-          text: "He handed the note to ___.",
-          options: ["I", "me", "my"],
-          answer: "me",
-        },
-        {
-          text: "We met ___ at the station.",
-          options: ["they", "them", "their"],
-          answer: "them",
-        },
-        {
-          text: "I showed ___ my new phone.",
-          options: ["she", "her", "hers"],
-          answer: "her",
-        },
-        {
-          text: "This present is for ___.",
-          options: ["we", "us", "our"],
-          answer: "us",
-        },
-        {
-          text: "___ is the fastest runner on our team.",
-          options: ["He", "Him", "His"],
-          answer: "He",
-        },
-        {
-          text: "Can you wait for ___?",
-          options: ["I", "me", "my"],
-          answer: "me",
-        },
-        {
-          text: "___ often study together after school.",
-          options: ["We", "Us", "Our"],
-          answer: "We",
-        },
-        {
-          text: "The coach gave advice to ___.",
-          options: ["we", "us", "our"],
-          answer: "us",
-        },
-
-        // 15. Countable / uncountable nouns
-        {
-          text: "I bought four ___ at the shop.",
-          options: ["orange", "oranges", "orangies"],
-          answer: "oranges",
-        },
-        {
-          text: "There are two ___ near the entrance.",
-          options: ["bench", "benches", "benchs"],
-          answer: "benches",
-        },
-        {
-          text: "I need some ___ for the recipe.",
-          options: ["flour", "flours", "floury"],
-          answer: "flour",
-        },
-        {
-          text: "Do you have any ___ for the trip?",
-          options: ["luggage", "luggages", "luggagey"],
-          answer: "luggage",
-        },
-        {
-          text: "She doesn't drink much ___.",
-          options: ["coffee", "coffees", "coffeed"],
-          answer: "coffee",
-        },
-        {
-          text: "There isn't much ___ about the schedule.",
-          options: ["information", "informations", "informed"],
-          answer: "information",
-        },
-        {
-          text: "I bought a lot of ___ at the market.",
-          options: ["fruit", "fruits", "fruited"],
-          answer: "fruit",
-        },
-        {
-          text: "How many ___ do you have?",
-          options: ["cousin", "cousins", "cousining"],
-          answer: "cousins",
-        },
-        {
-          text: "How much ___ do you need for the poster?",
-          options: ["paper", "papers", "papery"],
-          answer: "paper",
-        },
-        {
-          text: "We don't have much ___ before the test.",
-          options: ["time", "times", "timing"],
-          answer: "time",
-        },
-
-        // 16. Demonstrative pronouns
-        {
-          text: "___ is my new backpack.",
-          options: ["This", "These", "Those"],
-          answer: "This",
-        },
-        {
-          text: "___ are your gloves.",
-          options: ["This", "Those", "That"],
-          answer: "Those",
-        },
-        {
-          text: "___ is a wonderful painting.",
-          options: ["That", "Those", "These"],
-          answer: "That",
-        },
-        {
-          text: "___ are my classmates' drawings.",
-          options: ["This", "These", "That"],
-          answer: "These",
-        },
-        {
-          text: "This map is clearer than ___ one.",
-          options: ["this", "that", "these"],
-          answer: "that",
-        },
-        {
-          text: "Is ___ your notebook on the desk?",
-          options: ["this", "these", "those"],
-          answer: "this",
-        },
-        {
-          text: "___ shoes by the door are mine.",
-          options: ["This", "These", "That"],
-          answer: "These",
-        },
-        {
-          text: "___ is my mother's handwriting.",
-          options: ["This", "These", "Those"],
-          answer: "This",
-        },
-        {
-          text: "___ bikes over there are broken.",
-          options: ["This", "These", "Those"],
-          answer: "Those",
-        },
-        {
-          text: "___ was an exciting basketball game.",
-          options: ["This", "These", "Those"],
-          answer: "This",
-        },
-
-        // 17. Possessives
-        {
-          text: "That is Kenji's ___.",
-          options: ["bag", "bags", "bagging"],
-          answer: "bag",
-        },
-        {
-          text: "The cat's ___ is very soft.",
-          options: ["fur", "furs", "furring"],
-          answer: "fur",
-        },
-        {
-          text: "This is ___ umbrella.",
-          options: ["I", "my", "me"],
-          answer: "my",
-        },
-        {
-          text: "Is this pencil case ___?",
-          options: ["you", "your", "yours"],
-          answer: "yours",
-        },
-        {
-          text: "That racket is his, not ___.",
-          options: ["she", "her", "hers"],
-          answer: "hers",
-        },
-        {
-          text: "Our teacher's ___ is on the second floor.",
-          options: ["office", "offices", "officing"],
-          answer: "office",
-        },
-        {
-          text: "This is ___ recorder for music class.",
-          options: ["she", "her", "hers"],
-          answer: "her",
-        },
-        {
-          text: "That water bottle is ___.",
-          options: ["I", "my", "mine"],
-          answer: "mine",
-        },
-        {
-          text: "___ classroom is on the third floor.",
-          options: ["Our", "Us", "Ours"],
-          answer: "Our",
-        },
-        {
-          text: "Is that cap ___?",
-          options: ["he", "his", "him"],
-          answer: "his",
-        },
-
-        // 18. Articles
-        {
-          text: "___ notebook on the desk is mine.",
-          options: ["A", "An", "The"],
-          answer: "The",
-        },
-        {
-          text: "___ printer in the office is broken.",
-          options: ["A", "An", "The"],
-          answer: "The",
-        },
-        {
-          text: "___ bird flew into the classroom.",
-          options: ["A", "An", "The"],
-          answer: "A",
-        },
-        {
-          text: "___ orange fell from the basket.",
-          options: ["A", "An", "The"],
-          answer: "An",
-        },
-        {
-          text: "My aunt is ___ nurse.",
-          options: ["a", "an", "the"],
-          answer: "a",
-        },
-        {
-          text: "He wants to become ___ astronaut.",
-          options: ["a", "an", "the"],
-          answer: "an",
-        },
-        {
-          text: "I saw ___ owl in the park at night.",
-          options: ["a", "an", "the"],
-          answer: "an",
-        },
-        {
-          text: "___ moon looked very bright last night.",
-          options: ["A", "An", "The"],
-          answer: "The",
-        },
-        {
-          text: "She wore ___ old jacket to school.",
-          options: ["a", "an", "the"],
-          answer: "an",
-        },
-        {
-          text: "We stayed at ___ small hotel by the sea.",
-          options: ["a", "an", "the"],
-          answer: "a",
-        },
-
-        // 19. Comparatives and superlatives
-        {
-          text: "This bag is ___ than that one.",
-          options: ["heavy", "heavier", "heaviest"],
-          answer: "heavier",
-        },
-        {
-          text: "This is the ___ mountain in Japan.",
-          options: ["high", "higher", "highest"],
-          answer: "highest",
-        },
-        {
-          text: "This test was ___ difficult than last week's.",
-          options: ["much", "more", "most"],
-          answer: "more",
-        },
-        {
-          text: "It's the ___ exciting movie of the year.",
-          options: ["more", "most", "much"],
-          answer: "most",
-        },
-        {
-          text: "My sister is ___ than me.",
-          options: ["short", "shorter", "shortest"],
-          answer: "shorter",
-        },
-        {
-          text: "Today is ___ than yesterday.",
-          options: ["hot", "hotter", "hottest"],
-          answer: "hotter",
-        },
-        {
-          text: "He is the ___ boy in our class.",
-          options: ["kind", "kinder", "kindest"],
-          answer: "kindest",
-        },
-        {
-          text: "This puzzle is ___ than the last one.",
-          options: ["easy", "easier", "easiest"],
-          answer: "easier",
-        },
-        {
-          text: "She swims ___ than her older brother.",
-          options: ["fast", "faster", "fastest"],
-          answer: "faster",
-        },
-        {
-          text: "This was the ___ concert I've ever been to.",
-          options: ["good", "better", "best"],
-          answer: "best",
-        },
-
-        // 20. Adverbs
-        {
-          text: "He answered the question ___.",
-          options: ["confident", "confidently", "confidenter"],
-          answer: "confidently",
-        },
-        {
-          text: "She closed the door ___.",
-          options: ["quiet", "quietly", "quieter"],
-          answer: "quietly",
-        },
-        {
-          text: "The homework was ___ difficult.",
-          options: ["very", "much", "many"],
-          answer: "very",
-        },
-        {
-          text: "I ___ enjoyed the school festival.",
-          options: ["real", "really", "very"],
-          answer: "really",
-        },
-        {
-          text: "I ___ check my bag before school.",
-          options: ["always", "alway", "alwaies"],
-          answer: "always",
-        },
-        {
-          text: "He ___ forgets his homework.",
-          options: ["sometimes", "sometime", "sometimely"],
-          answer: "sometimes",
-        },
-        {
-          text: "She plays the violin ___.",
-          options: ["good", "well", "best"],
-          answer: "well",
-        },
-        {
-          text: "The choir sang ___ at the ceremony.",
-          options: ["beautiful", "beautifully", "beautifuly"],
-          answer: "beautifully",
-        },
-        {
-          text: "He listens to the teacher ___.",
-          options: ["careful", "carefully", "carefuller"],
-          answer: "carefully",
-        },
-        {
-          text: "I was ___ nervous before the speech.",
-          options: ["extreme", "extremely", "extremer"],
-          answer: "extremely",
-        },
-
-        // 21. Conjunctions
-        {
-          text: "I like curry ___ my brother likes ramen.",
-          options: ["and", "but", "or"],
-          answer: "and",
-        },
-        {
-          text: "The gym is big ___ the pool is small.",
-          options: ["and", "but", "or"],
-          answer: "but",
-        },
-        {
-          text: "You can choose tea ___ juice.",
-          options: ["and", "but", "or"],
-          answer: "or",
-        },
-        {
-          text: "I got a good grade ___ I studied hard.",
-          options: ["because", "but", "or"],
-          answer: "because",
-        },
-        {
-          text: "It was raining, ___ we stayed inside.",
-          options: ["so", "but", "or"],
-          answer: "so",
-        },
-        {
-          text: "I wanted to run outside, ___ it got dark.",
-          options: ["and", "but", "or"],
-          answer: "but",
-        },
-        {
-          text: "You can sit here ___ over there.",
-          options: ["and", "but", "or"],
-          answer: "or",
-        },
-        {
-          text: "She was absent ___ she caught a cold.",
-          options: ["because", "so", "or"],
-          answer: "because",
-        },
-        {
-          text: "It was noisy, ___ I closed the window.",
-          options: ["so", "but", "because"],
-          answer: "so",
-        },
-        {
-          text: "He enjoys drawing ___ painting.",
-          options: ["and", "but", "because"],
-          answer: "and",
-        },
-
-        // 22. Prepositions of place
-        {
-          text: "The eraser is ___ the pencil case.",
-          options: ["in", "on", "at"],
-          answer: "in",
-        },
-        {
-          text: "The ball rolled ___ the desk.",
-          options: ["under", "on", "at"],
-          answer: "under",
-        },
-        {
-          text: "My house is ___ the convenience store.",
-          options: ["near", "on", "at"],
-          answer: "near",
-        },
-        {
-          text: "The gym is ___ the pool and the field.",
-          options: ["between", "near", "on"],
-          answer: "between",
-        },
-        {
-          text: "She stood ___ to the door.",
-          options: ["next", "near", "between"],
-          answer: "next",
-        },
-        {
-          text: "There is a vending machine ___ the right.",
-          options: ["on", "in", "at"],
-          answer: "on",
-        },
-        {
-          text: "The key is ___ the drawer.",
-          options: ["in", "on", "at"],
-          answer: "in",
-        },
-        {
-          text: "My school is ___ the train station.",
-          options: ["near", "in", "between"],
-          answer: "near",
-        },
-        {
-          text: "The bag is ___ the chair.",
-          options: ["on", "in", "between"],
-          answer: "on",
-        },
-        {
-          text: "Put your shoes ___ the shelf.",
-          options: ["on", "in", "between"],
-          answer: "on",
-        },
-
-        // 23. Prepositions of time
-        {
-          text: "The bus leaves ___ seven thirty.",
-          options: ["at", "on", "in"],
-          answer: "at",
-        },
-        {
-          text: "We have club activities ___ Wednesday.",
-          options: ["on", "at", "in"],
-          answer: "on",
-        },
-        {
-          text: "It's usually cool ___ October.",
-          options: ["in", "on", "at"],
-          answer: "in",
-        },
-        {
-          text: "I do my homework ___ the afternoon.",
-          options: ["in", "on", "at"],
-          answer: "in",
-        },
-        {
-          text: "The sports day is ___ September.",
-          options: ["in", "on", "at"],
-          answer: "in",
-        },
-        {
-          text: "The store opens ___ ten a.m.",
-          options: ["at", "on", "in"],
-          answer: "at",
-        },
-        {
-          text: "We visit our grandparents ___ New Year.",
-          options: ["at", "on", "in"],
-          answer: "at",
-        },
-        {
-          text: "My birthday is ___ March second.",
-          options: ["on", "in", "at"],
-          answer: "on",
-        },
-        {
-          text: "I brush my teeth ___ night.",
-          options: ["at", "on", "in"],
-          answer: "at",
-        },
-        {
-          text: "She moved here ___ 2022.",
-          options: ["in", "on", "at"],
-          answer: "in",
-        },
-
-        // 24. Adjective + preposition
-        {
-          text: "He's really good ___ drawing.",
-          options: ["at", "in", "for"],
-          answer: "at",
-        },
-        {
-          text: "I'm worried ___ the exam.",
-          options: ["about", "for", "in"],
-          answer: "about",
-        },
-        {
-          text: "She's interested ___ space and stars.",
-          options: ["in", "at", "for"],
-          answer: "in",
-        },
-        {
-          text: "Sleep is good ___ your health.",
-          options: ["for", "of", "to"],
-          answer: "for",
-        },
-        {
-          text: "This gift is similar ___ mine.",
-          options: ["to", "with", "for"],
-          answer: "to",
-        },
-        {
-          text: "He's proud ___ his little sister.",
-          options: ["of", "for", "about"],
-          answer: "of",
-        },
-        {
-          text: "She's great ___ solving puzzles.",
-          options: ["at", "in", "for"],
-          answer: "at",
-        },
-        {
-          text: "We're excited ___ the school trip.",
-          options: ["about", "for", "of"],
-          answer: "about",
-        },
-        {
-          text: "I'm scared ___ spiders.",
-          options: ["of", "for", "about"],
-          answer: "of",
-        },
-        {
-          text: "It's necessary ___ bring your textbook.",
-          options: ["to", "for", "of"],
-          answer: "to",
-        },
-
-        // 25. Negation
-        {
-          text: "I don't ___ natto.",
-          options: ["like", "likes", "liked"],
-          answer: "like",
-        },
-        {
-          text: "He ___ at club today.",
-          options: ["isn't", "doesn't", "not"],
-          answer: "isn't",
-        },
-        {
-          text: "They don't ___ a smartphone yet.",
-          options: ["have", "has", "having"],
-          answer: "have",
-        },
-        {
-          text: "She doesn't ___ badminton.",
-          options: ["play", "plays", "played"],
-          answer: "play",
-        },
-        {
-          text: "We ___ finished packing yet.",
-          options: ["aren't", "doesn't", "isn't"],
-          answer: "aren't",
-        },
-        {
-          text: "I ___ done my chores yet.",
-          options: ["haven't", "don't", "isn't"],
-          answer: "haven't",
-        },
-        {
-          text: "He ___ like spicy food.",
-          options: ["doesn't", "isn't", "don't"],
-          answer: "doesn't",
-        },
-        {
-          text: "They ___ at the gym right now.",
-          options: ["aren't", "doesn't", "isn't"],
-          answer: "aren't",
-        },
-        {
-          text: "She ___ come to school yesterday.",
-          options: ["didn't", "doesn't", "isn't"],
-          answer: "didn't",
-        },
-        {
-          text: "I ___ ride a unicycle.",
-          options: ["can't", "don't", "doesn't"],
-          answer: "can't",
+          text: "電車___バスのほうが速いです。(The bus is faster than the train.)",
+          options: ["より", "から", "まで"],
+          answer: "より",
         },
       ];
       let questions = [];
