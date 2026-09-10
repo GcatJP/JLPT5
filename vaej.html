@@ -18,7 +18,7 @@
     />
     <meta name="apple-mobile-web-app-title" content="Noun Quiz" />
 
-    <title>Noun Quiz</title>
+    <title>Adjective Quiz</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com/" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
@@ -389,8 +389,8 @@
       <div class="start-title">How many questions?</div>
       <div class="start-buttons">
         <button class="btn" data-count="20">20</button>
-        <button class="btn" data-count="30">30</button>
         <button class="btn" data-count="40">40</button>
+        <button class="btn" data-count="all">All</button>
       </div>
     </div>
 
@@ -414,67 +414,93 @@
     <script>
       // ---- Noun bank: English noun + Japanese meaning ----
       const VERB_BANK = [
-        { en: "warm", jp: "暖かい" },
-        { en: "hot (weather)", jp: "暑い" },
-        { en: "hot (to touch)", jp: "熱い" },
-        { en: "dangerous", jp: "危ない" },
-        { en: "bright", jp: "明るい" },
-        { en: "red", jp: "赤い" },
-        { en: "blue", jp: "青い" },
-        { en: "boring", jp: "つまらない" },
-        { en: "delicious", jp: "おいしい" },
-        { en: "big", jp: "大きい" },
-        { en: "many/much", jp: "多い" },
-        { en: "heavy", jp: "重い" },
-        { en: "interesting", jp: "面白い" },
-        { en: "cold (weather)", jp: "寒い" },
-        { en: "kind", jp: "易しい" },
-        { en: "cheap", jp: "安い" },
-        { en: "delicious/tasty", jp: "うまい" },
-        { en: "sad", jp: "悲しい" },
-        { en: "old (things)", jp: "古い" },
-        { en: "few/little", jp: "少ない" },
-        { en: "narrow", jp: "狭い" },
-        { en: "shameful", jp: "恥ずかしい" },
-        { en: "cold (to touch)", jp: "冷たい" },
-        { en: "strong", jp: "強い" },
-        { en: "high/expensive", jp: "高い" },
-        { en: "correct", jp: "正しい" },
-        { en: "close/near", jp: "近い" },
-        { en: "long", jp: "長い" },
-        { en: "difficult", jp: "難しい" },
-        { en: "low/short", jp: "低い" },
-        { en: "wide", jp: "広い" },
-        { en: "weak", jp: "弱い" },
-        { en: "bad", jp: "悪い" },
-        { en: "young", jp: "若い" },
-        { en: "good", jp: "いい / 良い" },
-        { en: "no good", jp: "よくない" },
-        { en: "not exist", jp: "ない" },
-        { en: "quiet", jp: "静かな" },
-        { en: "convenient", jp: "便利な" },
-        { en: "important", jp: "大切な" },
-        { en: "important/major", jp: "大事な" },
-        { en: "big (na-adj)", jp: "大きな" },
-        { en: "small (na-adj)", jp: "小さな" },
-        { en: "clean/pretty", jp: "きれいな" },
-        { en: "healthy/energetic", jp: "元気な" },
-        { en: "same", jp: "同じ" },
-        { en: "free (time)", jp: "暇な" },
-        { en: "kind", jp: "親切な" },
-        { en: "simple", jp: "簡単な" },
-        { en: "skillful", jp: "上手な" },
-        { en: "unskillful", jp: "下手な" },
-        { en: "like", jp: "好きな" },
-        { en: "dislike", jp: "嫌いな" },
-        { en: "necessary", jp: "必要な" },
-        { en: "sufficient", jp: "十分な" },
-        { en: "healthy", jp: "健康な" },
-        { en: "safe", jp: "安全な" },
-        { en: "famous", jp: "有名な" },
-        { en: "various", jp: "いろいろな" },
-        { en: "fine/OK", jp: "結構な" },
-        { en: "strange", jp: "変な" },
+        // い-adjectives
+        { en: "dangerous", jp: "危ない（あぶない）" },
+        { en: "red", jp: "赤い（あかい）" },
+        { en: "bright", jp: "明るい（あかるい）" },
+        { en: "sweet", jp: "甘い（あまい）" },
+        { en: "blue", jp: "青い（あおい）" },
+        { en: "new", jp: "新しい（あたらしい）" },
+        { en: "warm", jp: "暖かい（あたたかい）" },
+        { en: "thick", jp: "厚い（あつい）" },
+        { en: "hot (weather)", jp: "暑い（あつい）" },
+        { en: "hot (to touch)", jp: "熱い（あつい）" },
+        { en: "small", jp: "小さい（ちいさい）" },
+        { en: "near/close", jp: "近い（ちかい）" },
+        { en: "old (things)", jp: "古い（ふるい）" },
+        { en: "fat/thick", jp: "太い（ふとい）" },
+        { en: "fast/early", jp: "早い（はやい）" },
+        { en: "fast/quick", jp: "速い（はやい）" },
+        { en: "short/low", jp: "低い（ひくい）" },
+        { en: "spacious/wide", jp: "広い（ひろい）" },
+        { en: "want", jp: "欲しい（ほしい）" },
+        { en: "thin/slender", jp: "細い（ほそい）" },
+        { en: "busy", jp: "忙しい（いそがしい）" },
+        { en: "painful/sore", jp: "痛い（いたい）" },
+        { en: "spicy", jp: "辛い（からい）" },
+        { en: "light (weight)", jp: "軽い（かるい）" },
+        { en: "cute", jp: "可愛い（かわいい）" },
+        { en: "yellow", jp: "黄色い（きいろい）" },
+        { en: "dirty", jp: "汚い（きたない）" },
+        { en: "dark", jp: "暗い（くらい）" },
+        { en: "black", jp: "黒い（くろい）" },
+        { en: "round", jp: "丸い（まるい）" },
+        { en: "unpleasant (taste)", jp: "不味い（まずい）" },
+        { en: "short (length)", jp: "短い（みじかい）" },
+        { en: "difficult", jp: "難しい（むずかしい）" },
+        { en: "long", jp: "長い（ながい）" },
+        { en: "lukewarm", jp: "温い（ぬるい）" },
+        { en: "delicious", jp: "美味しい（おいしい）" },
+        { en: "heavy", jp: "重い（おもい）" },
+        { en: "interesting", jp: "面白い（おもしろい）" },
+        { en: "many/numerous", jp: "多い（おおい）" },
+        { en: "big", jp: "大きい（おおきい）" },
+        { en: "slow/late", jp: "遅い（おそい）" },
+        { en: "cold (weather)", jp: "寒い（さむい）" },
+        { en: "narrow", jp: "狭い（せまい）" },
+        { en: "white", jp: "白い（しろい）" },
+        { en: "few/little", jp: "少ない（すくない）" },
+        { en: "cool/refreshing", jp: "涼しい（すずしい）" },
+        { en: "high/expensive", jp: "高い（たかい）" },
+        { en: "enjoyable/fun", jp: "楽しい（たのしい）" },
+        { en: "far", jp: "遠い（とおい）" },
+        { en: "boring", jp: "詰まらない（つまらない）" },
+        { en: "cold (to touch)", jp: "冷たい（つめたい）" },
+        { en: "strong/powerful", jp: "強い（つよい）" },
+        { en: "noisy/annoying", jp: "煩い（うるさい）" },
+        { en: "thin/weak", jp: "薄い（うすい）" },
+        { en: "young", jp: "若い（わかい）" },
+        { en: "bad", jp: "悪い（わるい）" },
+        { en: "easy", jp: "易しい（やさしい）" },
+        { en: "cheap", jp: "安い（やすい）" },
+        { en: "good", jp: "良い（よい）" },
+        { en: "weak", jp: "弱い（よわい）" },
+
+        // な-adjectives
+        { en: "convenient/useful", jp: "便利（べんり）" },
+        { en: "OK/alright", jp: "大丈夫（だいじょうぶ）" },
+        { en: "love/like very much", jp: "大好き（だいすき）" },
+        { en: "lively/healthy", jp: "元気（げんき）" },
+        { en: "unskillful/poor at", jp: "下手（へた）" },
+        { en: "free time", jp: "暇（ひま）" },
+        { en: "truth/reality", jp: "本当（ほんとう）" },
+        { en: "various", jp: "色々（いろいろ）" },
+        { en: "unpleasant", jp: "嫌（いや）" },
+        { en: "strong/durable", jp: "丈夫（じょうぶ）" },
+        { en: "skillful/good at", jp: "上手（じょうず）" },
+        { en: "splendid/enough", jp: "結構（けっこう）" },
+        { en: "hate/dislike", jp: "嫌い（きらい）" },
+        { en: "pretty/beautiful", jp: "綺麗（きれい）" },
+        { en: "straight ahead", jp: "真っ直ぐ（まっすぐ）" },
+        { en: "bustling/busy", jp: "賑やか（にぎやか）" },
+        { en: "splendid", jp: "立派（りっぱ）" },
+        { en: "quiet", jp: "静か（しずか）" },
+        { en: "like", jp: "好き（すき）" },
+        { en: "perhaps/probably", jp: "多分（たぶん）" },
+        { en: "very/greatly", jp: "大変（たいへん）" },
+        { en: "important/beloved", jp: "大切（たいせつ）" },
+        { en: "many", jp: "沢山（たくさん）" },
+        { en: "famous", jp: "有名（ゆうめい）" },
       ];
 
       let QUESTIONS_PER_GAME = 20; // now variable, set by start-screen buttons
@@ -616,7 +642,10 @@
       // start-screen buttons pick the question count and begin the game
       document.querySelectorAll(".start-buttons .btn").forEach((btn) => {
         btn.addEventListener("click", () => {
-          QUESTIONS_PER_GAME = parseInt(btn.dataset.count, 10);
+          QUESTIONS_PER_GAME =
+            btn.dataset.count === "all"
+              ? ADJ_BANK.length
+              : parseInt(btn.dataset.count, 10);
           startGame();
         });
       });
